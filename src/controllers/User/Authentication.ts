@@ -12,24 +12,3 @@ export default class Authentication{
     }
 
 }
-
-
-class Email{
-
-    public async authenticate(email : string, password : string){
-        let pass = new Password()
-        let user = await this.getUser(email)
-        let compare = await pass.compare(user.password, password)
-        if(compare) return {status : 200, msg : "success", token : "token", user} // giving the whole user obj but should be changed to only important info like not giving the password salt
-        else return {status : 404, msg : "failed"}
-    }
-
-    private getUser(email){
-        return User.findOne({email})
-        .then(result => result)
-        .catch(err => err)
-    }
-}
-
-class Google{}
-class Fb{}
