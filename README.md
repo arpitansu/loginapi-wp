@@ -36,6 +36,6 @@ GET host:3000/user
 with Authorization header:-
 
 key : Authorization
-value : jwt <token which was given to the user when they logged in>
+value : jwt [token which was given to the user when they logged in]
 
-e.g : jwt<space>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYi5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRwS09HZ1RYYWZhZGswYVpYLkFTRDd1QWhZbHcvcWt4bnFUOWE4ampFTGEuVWwyV3dlRjhIeSIsImlhdCI6MTU2Nzc4NjQwNCwiZXhwIjoxNTY3NzkwMDA0fQ.Ut1pKWLm-zFs7f05emckLEnRnotvN_iCZUWwFl5fFNM 
+e.g : jwt[space]eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYi5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRwS09HZ1RYYWZhZGswYVpYLkFTRDd1QWhZbHcvcWt4bnFUOWE4ampFTGEuVWwyV3dlRjhIeSIsImlhdCI6MTU2Nzc4NjQwNCwiZXhwIjoxNTY3NzkwMDA0fQ.Ut1pKWLm-zFs7f05emckLEnRnotvN_iCZUWwFl5fFNM 
