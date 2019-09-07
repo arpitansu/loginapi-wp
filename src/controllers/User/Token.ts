@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { Config } from '../../bin/Config';
+import { Config } from '../../Config';
 
 export default class Token{
 

@@ -2,7 +2,7 @@ import User from "../../db/models/User"
 import SignUp from "./SignUp"
 import Authentication from "./Authentication";
 import OtpGen from "./Otp";
-import Sms from "../../bin/Utils/sms";
+import Sms from "../../Utils/sms";
 const { validationResult } = require('express-validator');
 
 export async function register(req, res){

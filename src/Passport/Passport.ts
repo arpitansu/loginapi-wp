@@ -1,5 +1,6 @@
-import { Config } from "../bin/Config";
+
 import User from "../db/models/User";
+import { Config } from "../Config";
 
 
 var JwtStrategy = require('passport-jwt').Strategy;
