@@ -4,7 +4,8 @@ import Token from "../Token";
 
 export default class EmailAuth{
 
-    public async authenticate(email : string, password : string){
+    public async authenticate(obj : {email : string, password : string}){
+        let {email, password} = obj
         let pass = new Password()
         let user = await this.getUser(email)
         let compare = await pass.compare(user.password, password)

@@ -3,16 +3,18 @@ import { resolve } from "path";
 import Password from "./Password";
 
 
-interface iUser {name : string, email : string, password : string}
+interface iUser {name : string, email : string, password : string, number : string}
 
 export default class SignUp{
     private name : string
     private email : string
     private password : string
+    private number : string
     constructor(obj : iUser){
         this.name = obj.name
         this.email = obj.email
         this.password = obj.password
+        this.number = obj.number
     }
 
     async execute(){
@@ -22,7 +24,8 @@ export default class SignUp{
         let user = new User({
             name : this.name,
             email : this.email,
-            password : hashpass
+            password : hashpass,
+            number : this.number
         })
 
         return user.save().then(result => result)

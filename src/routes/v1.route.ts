@@ -29,6 +29,11 @@ router.post("/signup",[
     usercontroller.register
 )
 
+//mobile number login
+router.post("/otp", [
+    check('number', 'Number Required').not().isEmpty()
+    ], usercontroller.SendOtp)
+
 router.use("/user",passport.authenticate('jwt', { session: false }), UserRoute)
 
 export default router;
