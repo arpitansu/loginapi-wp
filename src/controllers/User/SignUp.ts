@@ -29,7 +29,7 @@ export default class SignUp{
         })
 
         return user.save().then(result => result)
-        .catch(err => err)
+        .catch(err => {throw err})
     }
 
 

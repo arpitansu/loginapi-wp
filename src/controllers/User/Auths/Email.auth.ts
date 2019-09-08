@@ -1,6 +1,6 @@
 import Password from "../Password";
 import User from "../../../db/models/User";
-import Token from "../Token";
+import Token from "../Token";   
 
 export default class EmailAuth{
 

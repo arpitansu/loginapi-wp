@@ -10,13 +10,20 @@ export async function register(req, res){
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      res.status(422).jsonp(errors.array())
+      res.status(422).json({msg : "All fields required"})
       return
     }
 
     let signup = new SignUp(req.body)
-    let result = await signup.execute()
-    res.json(result)
+    return signup.execute()
+    .then(result => {
+        res.json({msg : "User has been registered"})
+    })
+    .catch(e => {
+        res.status(500)
+        res.json({msg : "user registration failed"})
+    })
+    
 }
 
 export async function SignIn(req, res){
@@ -43,7 +50,7 @@ export async function SendOtp(req, res){
         let genOtp = await new OtpGen().gen(user.id)
         console.log("otp is : ", genOtp.otp)
         let sms = new Sms().send(user.number, `Hi from the api twillio Otp : ${genOtp.otp}`)
-        res.json({msg : "Otp has ben sent successfully"})
+        res.json({msg : "Otp has ben sent successfully" + " OTP : " + genOtp.otp})
         return
     }
 
