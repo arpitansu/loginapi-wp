@@ -7,8 +7,8 @@ export default class Sms{
 
 
     send(number = "7705874751", text = "Hello from twillio"){
-        // client.messages
-        // .create({body: text, from: '+12055499684', to: `+91${number}`})
-        // .then(message => console.log(message));
+        client.messages
+        .create({body: text, from: '+12055499684', to: `+91${number}`})
+        .then(message => console.log(message));
     }
 }
